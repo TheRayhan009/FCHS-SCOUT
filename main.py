@@ -17,4 +17,3 @@ def academic():
 def admission():
     return render_template("admission.html")
 
-app.run(debug=True)
