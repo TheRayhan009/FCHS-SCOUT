@@ -1,0 +1,106 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scout-logo {
+    border-radius: 500px;
+    width: 100px; 
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: falling 2s linear forwards;
+}
+
+.falling-text {
+    margin: 0;
+    font-size: 2em;
+    animation: falling 5s linear forwards;
+    color: #000;
+    text-shadow: 2px 2px 4px #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(-50%) translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+    }
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.progress-bar {
+    width: 80%;
+    max-width: 400px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 20%;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #FF5C35;
+    animation: fill 5s infinite;
+}
+
+@keyframes fill {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .falling-text {
+        font-size: 1.5em;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 10px;
+    }
+
+    .scout-logo {
+        width: 80px; 
+        top: 10%;
+    }
+
+    .progress-bar {
+        width: 90%;
+        height: 15px;
+        bottom: 15%;
+    }
+
+    .loader-container {
+        padding: 0 10px;
+    }
+}
